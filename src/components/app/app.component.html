@@ -36,11 +36,11 @@
           name="question"
           (keyup.enter)="ask()"
           (keyup.control.enter)="ask()"
-          placeholder="Prompt"
+          placeholder="Enter message"
           tabindex="0"
           aria-description="Input field for the message to send to the currently selected model"
         ></textarea>
-        <textarea
+        <!--<textarea
           [(ngModel)]="system"
           class="form-control"
           aria-label="System Prompt"
@@ -50,7 +50,7 @@
           placeholder="System Prompt"
           tabindex="0"
           aria-description="Input field to provide a system prompt for the currently selected model"
-        ></textarea>
+        ></textarea> -->
         <button
           *ngIf="!generating"
           type="button"

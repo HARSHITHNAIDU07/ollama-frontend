@@ -1,52 +1,61 @@
-<header class="w-100 mw-100 h-100 mh-100">
-  <nav class="d-flex w-100 mw-100 h-100 mh-100 align-items-center justify-content-between">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0" aria-label="Currently selected Model">
-        {{model}}
-      </button>
-      <ul class="dropdown-menu" id="dropdown" aria-label="Model list">
-        <li *ngFor="let m of models" [value]="m.name" (click)="modelChange.emit(m.name)" class="dropdown-item">
-          <a>{{m.name}} {{m.size / 1024 / 1024 / 1024 | number: '1.0-2'}} GB</a>
-        </li>
-      </ul>
-    </div>
-    <div class="d-flex justify-content-center">
-      Ollama Client
-    </div>
-    <div class="d-flex align-items-center justify-content-between">
-      <button
-        class="btn btn-primary d-flex justify-content-end"
-        type="button"
-        tabindex="0"
-        (click)="modelInfo.emit()"
-        (keyup.enter)="modelInfo.emit()"
-        (keyup.space)="modelInfo.emit()"
-        aria-label="Current model info"
-        aria-description="Shows information about the currently selected model">
-        <i class="bi bi-info-circle"></i>
-      </button>
-      <button
-        class="btn btn-primary d-flex justify-content-end"
-        type="button"
-        tabindex="0"
-        (click)="settingsClicked.emit()"
-        (keyup.enter)="settingsClicked.emit()"
-        (keyup.space)="settingsClicked.emit()"
-        aria-label="Show Settings Popup"
-        aria-description="Shows the settings popup">
-        <i class="bi bi-gear"></i>
-      </button>
-      <button
-        class="btn btn-warning d-flex justify-content-end"
-        type="button"
-        tabindex="0"
-        (click)="deleteCurrentChat.emit()"
-        (keyup.enter)="deleteCurrentChat.emit()"
-        (keyup.space)="deleteCurrentChat.emit()"
-        aria-label="Delete current chat"
-        aria-description="Deletes the current chat without confirmation or ability to restore">
-        <i class="bi bi-trash"></i>
-      </button>
-    </div>
-  </nav>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Image</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    /* Optional: To make the logo square */
+    .logo {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header class="w-100 mw-100 h-100 mh-100">
+    <nav class="d-flex w-100 mw-100 h-100 mh-100 align-items-center justify-content-between">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0" aria-label="Currently selected Model">
+          {{model}}
+        </button>
+        <ul class="dropdown-menu" id="dropdown" aria-label="Model list">
+          <!-- Angular ngFor directive to loop through models -->
+          <li *ngFor="let m of models" [value]="m.name" (click)="modelChange.emit(m.name)" class="dropdown-item">
+            <a>{{m.name}} {{m.size / 1024 / 1024 / 1024 | number: '1.0-2'}} GB</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Logo with square shape -->
+      <div class="d-flex align-items-center">
+        <img src="favicon.ico" alt="Logo" class="logo">
+        <div class="ml-2">RINL</div>
+      </div>
+      
+      <!-- Adjusted remaining buttons -->
+      <div class="d-flex align-items-center justify-content-end">
+        <button
+          class="btn btn-warning d-flex justify-content-end"
+          type="button"
+          tabindex="0"
+          (click)="deleteCurrentChat.emit()"
+          (keyup.enter)="deleteCurrentChat.emit()"
+          (keyup.space)="deleteCurrentChat.emit()"
+          aria-label="Delete current chat"
+          aria-description="Deletes the current chat without confirmation or ability to restore">
+          <i class="bi bi-trash"></i> <!-- Bootstrap Icons trash icon -->
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -83,7 +83,7 @@ export class ChatService {
       chatName: "Untitled",
       context: [],
       messages: [],
-      model: model ?? "",
+      model: "llama3",
     }
   }
 

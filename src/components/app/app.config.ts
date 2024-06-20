@@ -33,7 +33,7 @@ export const appConfig: ApplicationConfig = {
     },
     {
       provide: API_URL,
-      useValue: "http://127.0.0.1:11434/api"
+      useValue: "http://192.168.63.234:11434/api"
     },
     provideRouter(ROUTES)
   ],
