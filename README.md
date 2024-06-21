@@ -4,6 +4,7 @@ install ollama
     u could download ollama form website for windows and mac
 
 install llama3 on ollama with the help of the following command
+
   ollama run llama3
 
 create the custom model on llama3 baseline
