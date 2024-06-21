@@ -4,7 +4,7 @@ import { ModelTag, OllamaClientService } from "../../services/ollama-client.serv
 import { FormsModule } from "@angular/forms";
 import { ChatBubbleComponent } from "../chat-bubble/chat-bubble.component";
 import { Chat, ChatService } from "../../services/chat.service";
-import { SidebarComponent } from "../sidebar/sidebar.component";
+//import { SidebarComponent } from "../sidebar/sidebar.component";
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
@@ -14,7 +14,7 @@ import { SettingsPopupComponent } from '../settings-popup/settings-popup.compone
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, FormsModule, ChatBubbleComponent, SidebarComponent, HeaderComponent, SettingsPopupComponent],
+  imports: [CommonModule, FormsModule, ChatBubbleComponent,  HeaderComponent, SettingsPopupComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
